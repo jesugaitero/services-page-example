@@ -4,8 +4,139 @@
     <title>Services</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles specific to this page */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .loading-animation {
+            margin-bottom: 20px;
+        }
+
+        .gear-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gear {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #3498db;
+            border-radius: 50%;
+            margin: 0 10px;
+            animation: spin 2s linear infinite;
+        }
+
+        .gear-2 {
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .our-process, .mission, .biography {
+            padding: 4em 2em;
+            background-color: #f8f9fa;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2em;
+        }
+
+        .step {
+            flex-basis: 22%;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step i {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .bio-container {
+            display: flex;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bio-image {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .bio-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .bio-text {
+            flex: 2;
+        }
+
+        @media (max-width: 768px) {
+            .step {
+                flex-basis: 45%;
+                margin-bottom: 20px;
+            }
+
+            .bio-container {
+                flex-direction: column;
+            }
+
+            .bio-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .step {
+                flex-basis: 100%;
+            }
+        }
+
+        /* New style for center-aligned titles */
+        h1, h2 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -61,66 +192,76 @@
                     <a href="#" class="service-link">Learn More</a>
                 </div>
             </div>
-            <section class="our-process">
-                <h2>How We Work</h2>
-                <div class="process-steps">
-                    <div class="step">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3>Ideation</h3>
-                        <p>We brainstorm innovative solutions tailored to your unique needs.</p>
-                    </div>
-                    <div class="step">
-                        <i class="fas fa-pencil-ruler"></i>
-                        <h3>Design</h3>
-                        <p>Our team crafts visually appealing and user-friendly designs.</p>
-                    </div>
-                    <div class="step">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Development</h3>
-                        <p>We bring designs to life with cutting-edge technology and best practices.</p>
-                    </div>
-                    <div class="step">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Growth</h3>
-                        <p>We continuously optimize and scale your digital presence.</p>
-                    </div>
+        </section>
+        <section class="our-process">
+            <h2>How We Work</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Ideation</h3>
+                    <p>We brainstorm innovative solutions tailored to your unique needs.</p>
                 </div>
-            </section>
-            <section class="mission">
-                <h2>Our Mission</h2>
-                <div class="mission-content">
-                    <p>At the core of our work is a commitment to shaping the future of marketing. We believe in harnessing the power of technology and creativity to deliver exceptional results for our clients.</p>
-                    <p>Our mission is to empower businesses with innovative digital solutions that drive growth, enhance brand visibility, and create meaningful connections with their audience.</p>
-                    <p>We're dedicated to staying at the forefront of digital trends, continuously adapting our strategies to the ever-evolving digital landscape.</p>
+                <div class="step">
+                    <i class="fas fa-pencil-ruler"></i>
+                    <h3>Design</h3>
+                    <p>Our team crafts visually appealing and user-friendly designs.</p>
                 </div>
-            </section>
-            <section class="biography">
-                <h2>About Our Team</h2>
-                <div class="bio-container">
-                    <div class="bio-image">
-                        <img src="team-photo.jpg" alt="Our Team" />
-                    </div>
-                    <div class="bio-text">
-                        <p>Our team of experts brings together years of experience in various fields of technology and design. Led by our founder, Jane Doe, we've been delivering top-notch services since 2010.</p>
-                        <p>With a passion for innovation and a commitment to excellence, we strive to exceed our clients' expectations in every project we undertake.</p>
-                    </div>
+                <div class="step">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Development</h3>
+                    <p>We bring designs to life with cutting-edge technology and best practices.</p>
                 </div>
-            </section>
-            <script>
-                window.addEventListener('load', function() {
-                    setTimeout(function() {
-                        document.getElementById('loading-screen').style.opacity = '0';
-                        document.querySelector('.service-grid').style.opacity = '1';
-                        setTimeout(function() {
-                            document.getElementById('loading-screen').style.display = 'none';
-                        }, 500);
-                    }, 2000); // 2 seconds delay
-                });
-            </script>
+                <div class="step">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth</h3>
+                    <p>We continuously optimize and scale your digital presence.</p>
+                </div>
+            </div>
+        </section>
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <div class="mission-content">
+                <p>At the core of our work is a commitment to shaping the future of marketing. We believe in harnessing the power of technology and creativity to deliver exceptional results for our clients.</p>
+                <p>Our mission is to empower businesses with innovative digital solutions that drive growth, enhance brand visibility, and create meaningful connections with their audience.</p>
+                <p>We're dedicated to staying at the forefront of digital trends, continuously adapting our strategies to the ever-evolving digital landscape.</p>
+            </div>
+        </section>
+        <section class="biography">
+            <h2>About Our Team</h2>
+            <div class="bio-container">
+                <div class="bio-image">
+                    <img src="team-photo.jpg" alt="Our Team" />
+                </div>
+                <div class="bio-text">
+                    <p>Our team of experts brings together years of experience in various fields of technology and design. Led by our founder, Jane Doe, we've been delivering top-notch services since 2010.</p>
+                    <p>With a passion for innovation and a commitment to excellence, we strive to exceed our clients' expectations in every project we undertake.</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2023 Your Company. All rights reserved.</p>
     </footer>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').style.opacity = '0';
+                document.querySelector('.service-grid').style.opacity = '1';
+                setTimeout(function() {
+                    document.getElementById('loading-screen').style.display = 'none';
+                }, 500);
+            }, 2000); // 2 seconds delay
+        });
+
+        // Add scroll event listener for header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>

@@ -125,12 +125,12 @@ header nav a.active {
     }
 }
 
-.services {
+.services, .how-we-work {
     padding: 6em 2em;
     background-color: #fff;
 }
 
-.services h2 {
+.services h2, .how-we-work h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 2em;
@@ -140,7 +140,7 @@ header nav a.active {
     animation: fadeInUp 1s ease-out forwards;
 }
 
-.service-grid {
+.service-grid, .work-process {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 30px;
@@ -148,7 +148,7 @@ header nav a.active {
     margin: 0 auto;
 }
 
-.service {
+.service, .work-step {
     background-color: #fff;
     padding: 30px;
     border-radius: 15px;
@@ -159,89 +159,35 @@ header nav a.active {
     transform: scale(0.9);
 }
 
-.service:hover {
+.service:hover, .work-step:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.service i {
+.service i, .work-step i {
     font-size: 3rem;
     margin-bottom: 20px;
     color: #3498db;
     transition: all 0.5s ease;
 }
 
-.service:hover i {
+.service:hover i, .work-step:hover i {
     transform: rotate(360deg);
 }
 
-.service h3 {
+.service h3, .work-step h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #2c3e50;
 }
 
-.service p {
+.service p, .work-step p {
     font-size: 1rem;
     color: #7f8c8d;
 }
 
 .how-we-work {
-    padding: 6em 2em;
     background-color: #f1f8ff;
-}
-
-.how-we-work h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2em;
-    color: #2c3e50;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards;
-}
-
-.work-process {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.work-step {
-    flex-basis: calc(25% - 30px);
-    margin: 15px;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: all 0.5s ease;
-    opacity: 0;
-    transform: translateY(50px);
-}
-
-.work-step:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.work-step i {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #e74c3c;
-}
-
-.work-step h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.work-step p {
-    font-size: 1rem;
-    color: #7f8c8d;
 }
 
 footer {
@@ -279,17 +225,21 @@ footer {
         font-size: 2rem;
     }
     
-    .service-grid {
+    .service-grid, .work-process {
         grid-template-columns: 1fr;
-    }
-    
-    .work-step {
-        flex-basis: calc(50% - 30px);
     }
 }
 
 @media (max-width: 480px) {
-    .work-step {
-        flex-basis: 100%;
+    .service, .work-step {
+        padding: 20px;
+    }
+    
+    .service i, .work-step i {
+        font-size: 2.5rem;
+    }
+    
+    .service h3, .work-step h3 {
+        font-size: 1.3rem;
     }
 }
