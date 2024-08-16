@@ -25,28 +25,98 @@
         </section>
         <section class="services">
             <h2>What We Offer</h2>
-            <div class="service-grid">
+            <div id="loading-screen" class="loading-screen">
+                <div class="loading-animation">
+                    <div class="gear-container">
+                        <div class="gear gear-1"></div>
+                        <div class="gear gear-2"></div>
+                        <div class="gear gear-3"></div>
+                    </div>
+                </div>
+                <p>Loading our services...</p>
+            </div>
+            <div class="service-grid" style="opacity: 0; transition: opacity 0.5s ease-in-out;">
                 <div class="service">
                     <i class="fas fa-code"></i>
                     <h3>Web Development</h3>
                     <p>We build custom websites and web applications to meet your needs.</p>
+                    <a href="#" class="service-link">Learn More</a>
                 </div>
                 <div class="service">
                     <i class="fas fa-palette"></i>
                     <h3>Graphic Design</h3>
                     <p>We create stunning visuals to help you stand out from the crowd.</p>
+                    <a href="#" class="service-link">Learn More</a>
                 </div>
                 <div class="service">
                     <i class="fas fa-camera"></i>
                     <h3>Photography</h3>
                     <p>We capture life's precious moments with our expert photography services.</p>
+                    <a href="#" class="service-link">Learn More</a>
                 </div>
                 <div class="service">
                     <i class="fas fa-rocket"></i>
                     <h3>Digital Marketing</h3>
-                    <p>We help you reach new heights with our expert digital marketing services.</p>
+                    <p>We help you reach new heights with our expert digital marketing strategies.</p>
+                    <a href="#" class="service-link">Learn More</a>
                 </div>
             </div>
+            <section class="our-process">
+                <h2>How We Work</h2>
+                <div class="process-steps">
+                    <div class="step">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Ideation</h3>
+                        <p>We brainstorm innovative solutions tailored to your unique needs.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-pencil-ruler"></i>
+                        <h3>Design</h3>
+                        <p>Our team crafts visually appealing and user-friendly designs.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Development</h3>
+                        <p>We bring designs to life with cutting-edge technology and best practices.</p>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Growth</h3>
+                        <p>We continuously optimize and scale your digital presence.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mission">
+                <h2>Our Mission</h2>
+                <div class="mission-content">
+                    <p>At the core of our work is a commitment to shaping the future of marketing. We believe in harnessing the power of technology and creativity to deliver exceptional results for our clients.</p>
+                    <p>Our mission is to empower businesses with innovative digital solutions that drive growth, enhance brand visibility, and create meaningful connections with their audience.</p>
+                    <p>We're dedicated to staying at the forefront of digital trends, continuously adapting our strategies to the ever-evolving digital landscape.</p>
+                </div>
+            </section>
+            <section class="biography">
+                <h2>About Our Team</h2>
+                <div class="bio-container">
+                    <div class="bio-image">
+                        <img src="team-photo.jpg" alt="Our Team" />
+                    </div>
+                    <div class="bio-text">
+                        <p>Our team of experts brings together years of experience in various fields of technology and design. Led by our founder, Jane Doe, we've been delivering top-notch services since 2010.</p>
+                        <p>With a passion for innovation and a commitment to excellence, we strive to exceed our clients' expectations in every project we undertake.</p>
+                    </div>
+                </div>
+            </section>
+            <script>
+                window.addEventListener('load', function() {
+                    setTimeout(function() {
+                        document.getElementById('loading-screen').style.opacity = '0';
+                        document.querySelector('.service-grid').style.opacity = '1';
+                        setTimeout(function() {
+                            document.getElementById('loading-screen').style.display = 'none';
+                        }, 500);
+                    }, 2000); // 2 seconds delay
+                });
+            </script>
         </section>
     </main>
     <footer>
