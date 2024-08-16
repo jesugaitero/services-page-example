@@ -234,16 +234,7 @@
         <p>&copy; 2023 Your Company. All rights reserved.</p>
     </footer>
     <script>
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('loading-screen').style.opacity = '0';
-                document.querySelector('.service-grid').style.opacity = '1';
-                setTimeout(function() {
-                    document.getElementById('loading-screen').style.display = 'none';
-                }, 500);
-            }, 2000); // 2 seconds delay
-        });
-
+       
         // Add scroll event listener for header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
